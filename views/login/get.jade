@@ -1,0 +1,19 @@
+extends ../layout
+
+block content
+  if firstLogin
+    form(method='post')
+      h1 Create account
+      p First create an account to log in to your blog
+      input(type='text' placeholder='Blog name - you can change this later' id='blogName' name='blogName')
+      input(type='text' placeholder='Username' id='username' name='username')
+      input(type='password' placeholder='Password' id='password' name='password')
+      input(type='password' placeholder='Confirm password' id='confirmPassword')
+      input(type='submit' value='Create account')
+  else
+    form(method='post')
+      h1 Login
+      p Log in to your blog
+      input(type='text' placeholder='Username' id='username' name='username')
+      input(type='password' placeholder='Password' id='password' name='password')
+      input(type='submit' value='Password')

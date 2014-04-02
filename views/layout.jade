@@ -1,0 +1,14 @@
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    title=title
+    link(rel='stylesheet' type='text/css' href='/stylesheets/main.css')
+    link(rel='stylesheet' type='text/css' href='/stylesheets/' + page + '.css')
+    script(type='text/javascript' src='javascripts/jquery.js')
+    script(type='text/javascript', src='javascripts/' + page + '.js')
+  
+  body
+    div.container
+      block content
+    footer Copyright Blog App
