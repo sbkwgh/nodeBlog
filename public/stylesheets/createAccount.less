@@ -1,0 +1,30 @@
+@blue: #3E94D1;
+@lightBlue: #65A5D1;
+@darkBlue: #0A64A4;
+
+@lightGrey: #EDEDED;
+@midGrey: #DBDBDB;
+@grey: #BDBDBD;
+@darkGrey: #787878;
+
+.BorderRadius(@radius: 5px) {
+	border-radius: @radius;
+	-moz-border-radius: @radius;
+	-webkit-border-radius: @radius;
+	-ie-border-radius: @radius;
+}
+
+@font-family: 'Arial', 'Calibri', sans-serif;
+
+form {
+	width: 60%;
+	margin: 0 auto;
+}
+
+input[type='text'], input[type='password'] {
+	width: 100%;
+	font-size: 1.5em;
+	padding: 5px;
+	.BorderRadius();
+	border: 1px solid @darkGrey;
+}

@@ -15,6 +15,14 @@ app.use(express.urlencoded());
 app.use(express.methodOverride());
 app.use(express.cookieParser('your secret here'));
 app.use(express.session());
+//Redirect to login for all requests if user is not logged in at /dash
+app.use('/dash', function(req, res, next) {
+	if(!req.session.auth) {
+		res.location('/login');
+		res.send(307, null);
+	}
+	next();		
+});
 app.use(app.router);
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));

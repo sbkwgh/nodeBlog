@@ -1,0 +1,14 @@
+extends ../layout
+
+block content
+  form(method='post')
+    h1 Create account
+    p First create an account to log in to your blog
+    p Error, could not create account:
+      ul
+        each item in error
+          li=item
+    input(type='text' placeholder='Username' id='username' name='username')
+    input(type='password' placeholder='Password' id='password' name='password')
+    input(type='password' placeholder='Confirm password' id='confirmPassword')
+    input(type='submit' value='Create account')

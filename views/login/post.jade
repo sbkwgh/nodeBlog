@@ -4,6 +4,9 @@ block content
   form(method='post')
     h1 Login
     p Log in to your blog
+    if error
+      p
+        b=error
     input(type='text' placeholder='Username' id='username' name='username')
     input(type='password' placeholder='Password' id='password' name='password')
     input(type='submit' value='Password')
