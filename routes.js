@@ -1,5 +1,6 @@
 //import controller modules with file loader
-var c = require('./controllers');
+var path = require('path'),
+	c = require('moduleLoader')(path.join(__dirname, 'controllers');
 
 //routes
 module.exports = function(app) {
