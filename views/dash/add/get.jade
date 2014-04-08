@@ -1,0 +1,14 @@
+extends ../../layout
+
+block content
+  h1.centre Add a post
+  form(method='post')
+    h2 Title
+    input(type='text' name='title' placeholder='Add a title to your post').fullWidth
+    h2 Post content
+    textarea(name='content').fullWidth
+    h2 Tags
+    #tagBar.fullWidth
+      input.addTag(type='text', placeholder='Add a tag')
+      input#hiddenTags(type='hidden', name='tags')
+    input(type='submit' value='Add your post')

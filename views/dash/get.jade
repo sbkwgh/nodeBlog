@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+  h1.centre Dashboard
+  p Add, view, delete and edit posts. You can also edit your settings here.
+  #options
+    .option
+        #add-option.back-option
+        .front-option
+          a(href='dash/add') Add post
+      .option
+        #edit-option.back-option
+        .front-option
+          a(href='dash/edit') Edit posts
+      .option
+        #settings-option.back-option
+        .front-option
+          a(href='dash/settings') Settings

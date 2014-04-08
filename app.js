@@ -1,6 +1,7 @@
 //modules
-var express = require('express');
-var path = require('path');
+var express = require('express'),
+	path = require('path'),
+	errorPages = require('./controllers/errorPages.js');
 
 //start express
 var app = express();
@@ -13,7 +14,7 @@ app.use(express.favicon());
 app.use(express.json());
 app.use(express.urlencoded());
 app.use(express.methodOverride());
-app.use(express.cookieParser('your secret here'));
+app.use(express.cookieParser('secret code...'));
 app.use(express.session());
 //Redirect to login for all requests if user is not logged in at /dash
 app.use('/dash', function(req, res, next) {
@@ -26,14 +27,13 @@ app.use('/dash', function(req, res, next) {
 app.use(app.router);
 app.use(require('less-middleware')(path.join(__dirname, 'public')));
 app.use(express.static(path.join(__dirname, 'public')));
+//Add 404 page for unknown routes
+app.use(function(req, res, next){
+    errorPages.get(req, res, 404);
+});
 
-// development only
-if ('development' == app.get('env')) {
-	app.use(express.errorHandler());
-}
-
-//start routes
-require('./routes')(app)
+//start routes from routes.js file
+require('./routes')(app);
 
 
 app.listen(app.get('port'), function(){

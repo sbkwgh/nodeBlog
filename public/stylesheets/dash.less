@@ -1,0 +1,92 @@
+.LinkReset () {
+  color: #FFFFFF;
+  text-decoration: none;
+}
+
+.success {
+	position: absolute;
+	max-width: 20%;
+	border-radius: 5px;
+	left: 40%;
+	top: 25px;
+	background-color: #F5F5F5;
+	padding: 5px;
+	z-index: 100;
+	border: 1px grey solid;
+	-webkit-box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.75);
+	-moz-box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.75);
+	box-shadow: 0px 0px 18px 0px rgba(0,0,0,0.75);
+}
+
+#options {
+  font-family: 'Segoe UI', 'Arial', sans-serif;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+.option {
+  a {
+	&:link {
+		.LinkReset();
+	}
+	&:hover {
+		.LinkReset();
+	}
+	&:active {
+		.LinkReset();
+	}
+	&:visited {
+		.LinkReset();
+	}
+  }
+
+  display: inline-block;
+  position: relative;
+  width: 6.25em;
+  height: 6.25em;
+  margin: 2px;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #363636;
+}
+
+.back-option {
+  position: absolute;
+  width: 6.25em;
+  height: 6.25em;
+  border-radius: 5px;
+  background-size: contain;
+  -webkit-box-shadow: inset 0px 0px 0px 2px rgba(0,0,0,0.75);
+  -moz-box-shadow: inset 0px 0px 0px 2px rgba(0,0,0,0.75);
+  box-shadow: inset 0px 0px 0px 2px rgba(0,0,0,0.75);
+  opacity: 0.25;
+  transition: opacity 0.5s;
+}
+.option:hover .back-option {
+  opacity: 0.75;
+}
+
+.front-option {
+  position: absolute;
+  width: 6.25em;
+  height: 6.25em;
+  border-radius: 5px;
+  color: #FFFFFF;
+  font-weight: bold;
+  text-align: center;
+  line-height: 6.25em;
+  opacity: 1;
+  transition: opacity 0.5s;
+}
+
+#add-option {
+  background-image: url(../images/add.png);
+}
+
+#edit-option {
+  background-image: url(../images/edit.png);
+}
+
+#settings-option {
+   background-image: url(../images/settings.png);
+}

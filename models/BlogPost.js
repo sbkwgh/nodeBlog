@@ -2,7 +2,7 @@ var mongoose = require('mongoose');
 
 var BlogPostSchema = mongoose.Schema({
 	author: String,
-	dateCreated: Timestamp,
+	dateCreated: Date,
 	content: String,
 	tags: Array,
 	title: String

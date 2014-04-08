@@ -1,5 +1,22 @@
 extends layout
 
 block content
-  h1= title
-  p Welcome to #{title}
+  h1: u= title
+  if posts
+    each post in posts
+     .post
+       h2=post.title
+       h4 By 
+         em #{post.author}, #{new Date(post.dateCreated).toDateString()}
+       .mdPostContent
+         !=md(post.content)
+       .tags
+         if post.tags.length
+           each tag in post.tags
+            a(href='/tag/' + tag)=tag	
+         else
+           h3 No tags
+         hr		   
+  else
+    h2 No posts
+    
