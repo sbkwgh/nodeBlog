@@ -1,6 +1,7 @@
 var mongoose = require('mongoose');
 
 var BlogPostSchema = mongoose.Schema({
+	_id: ObjectId,
 	author: String,
 	dateCreated: Date,
 	content: String,
