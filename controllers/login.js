@@ -7,13 +7,11 @@ exports.get = function(req, res) {
 			mongoose.disconnect();
 			//If user is logged in, take them to the dash board
 			if(req.session.auth) {
-				res.location('/dash');
-				res.send(307, null);
+				res.redirect('/dash');
 			}
 			//If user document doesn't exist redirect to createAccount
 			if(!user) {
-				res.location('/createAccount');
-				res.send(307, null);
+				res.redirect('/createAccount');
 			} else {
 				//Otherwise render login page
 				res.render('login/get.jade', {
@@ -44,8 +42,7 @@ exports.post = function(req, res) {
 				if(user.checkPassword(req.body.password)) {
 					//Add auth session cookie, redirect to dash page
 					req.session.auth = true;
-					res.location('/dash');
-					res.send(307, null);
+					res.redirect('/dash');
 				} else {
 					renderError();
 				}

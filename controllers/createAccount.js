@@ -7,8 +7,7 @@ exports.get = function(req, res) {
 			mongoose.disconnect();
 			//If user document exists redirect to login
 			if(user) {
-				res.location('/login');
-				res.send(307, null);
+				res.redirect('/login');
 			} else {
 				//Otherwise render create account page
 				res.render('createAccount/get.jade', {
@@ -65,8 +64,7 @@ exports.post = function(req, res) {
 				mongoose.disconnect();
                 req.session.auth = true;
                 req.session.username = req.body.username;
-                res.location('/dash');
-				res.send(307, null);
+                res.redirect('/dash');
             });
         }
 	});
